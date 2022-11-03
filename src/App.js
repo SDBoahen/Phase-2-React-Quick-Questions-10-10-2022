@@ -12,7 +12,7 @@ function App() {
   const [ studentsInClass , setStudentInClass ] = useState( [] )
 
   const [ newStudent , setNewStudent ] = useState(  { name: "" }  )
-  // ** use a Form **
+  // ** Could Be Use in Relation to a Form/onSubmit **
 
 
   
