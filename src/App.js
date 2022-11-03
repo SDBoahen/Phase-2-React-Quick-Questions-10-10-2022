@@ -1,25 +1,78 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useState } from "react"
+
+
 function App() {
+
+
+  // const [ v , f ] = useState( initialValue )
+  const [ classAttendanceNumber , setClassAttendanceNumber ] = useState( 0 )
+  const [ studentsInClass , setStudentInClass ] = useState( [] )
+
+  const [ newStudent , setNewStudent ] = useState(  { name: "" }  )
+  // ** use a Form **
+
+
+  
+  function addStudentToClass(){
+
+    setStudentInClass(  [ ...studentsInClass , newStudent ]  )
+
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
+
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {
+
+          studentsInClass.map( ()=>{} )
+
+        }
+        
+    
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+/*
+
+
+    // const [ v , f ] = useState( initialValue )
+    const [ classAttendanceNumber , setClassAttendanceNumber ] = useState( 0 )
+    const [ studentsInClass , setStudentInClass ] = useState( [] )
+    // []  ->  [ {name: Ryan} ] ->  [ { name: "Ryan" } , { name: "Keila"} ]
+
+    // [ {} ]
+    // [ {},{} ]
+    // [ {},{},{} ]
+
+    function handlingAttendanceNumber(){
+
+      let newNumber = classAttendanceNumber + 1
+      setClassAttendanceNumber( newNumber )
+
+    }
+
+    function addStudentToClass(){
+
+      setStudentInClass(  [ ...studentsInClass , { name: "Keila" } ]  )
+      // setStudentInClass( {} {} {} )
+      // setStudentInClass(  [ {} {} {} ]  )
+      // setStudentInClass(  [ {} {} {} , {} ]  )
+
+    }
+
+
+
+*/
